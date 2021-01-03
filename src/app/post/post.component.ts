@@ -14,28 +14,29 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  SimpleChanges
+  SimpleChanges,
+  ViewEncapsulation
 } from '@angular/core';
 import {Post} from '../app.component';
 
 
+// @ts-ignore
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
-export class PostComponent implements
-  OnInit,
+export class PostComponent implements OnInit,
   OnChanges,
   DoCheck,
   AfterContentInit,
   AfterContentChecked,
   AfterViewInit,
   AfterViewChecked,
-  OnDestroy
-{
-  @Input()  post: Post;
+  OnDestroy {
+  @Input() post: Post;
   @Output() onRemove = new EventEmitter<number>();
   @ContentChild('info') infoRef: ElementRef;
   //
@@ -46,6 +47,7 @@ export class PostComponent implements
   removePost() {
     this.onRemove.emit(this.post.id);
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges', changes);
   }

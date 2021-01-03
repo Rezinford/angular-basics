@@ -14,7 +14,7 @@ export interface Post {
 export class AppComponent implements OnInit {
   posts: Post[] = [
     {title: 'sdfsdf', text: 'sdfsf', id: 1},
-    // {title: 'sdfs', text: 'sdffsf', id: 12}
+    {title: 'sdfs', text: 'sdffsf', id: 12}
   ];
 
   updatePosts(post: Post) {
@@ -28,14 +28,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      console.log('timeout');
-      this.posts[0] = {
-        title: 'chenchd',
-        text: 'chenched 2',
-        id: 33
-      };
-    }, 5000);
+    // setTimeout(() => {
+    //   console.log('timeout');
+    //   this.posts[0] = {
+    //     title: 'chenchd',
+    //     text: 'chenched 2',
+    //     id: 33
+    //   };
+    // }, 5000);
   }
 }
 

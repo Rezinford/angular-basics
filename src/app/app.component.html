@@ -1,21 +1,4 @@
 <h1>Hello Angular World!</h1>
-
-<!--<ul>-->
-<!--  <li *ngFor = "let n of arr; let idx = index">-->
-<!--   {{idx}}<strong> {{n}}</strong>-->
-<!--  </li>-->
-<!--</ul>-->
-
-<ul style = "list-style: none">
-  <li *ngFor="let post of obj">
-    <p>{{post.title}}<b> {{post.author}}</b></p>
-    <ul>
-      <li *ngFor="let comments of post.comments">
-        <div><small>{{comments.name}}</small>
-        <p>{{comments.text}}</p>
-        </div>
-      </li>
-    </ul>
-  </li>
-
-</ul>
+<p>
+  {{now | date:'long' | uppercase | lowercase }}
+</p>

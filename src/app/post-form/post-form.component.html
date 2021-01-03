@@ -1,0 +1,19 @@
+<p>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Title..."
+    [(ngModel)]="title"
+  >
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Text"
+    [(ngModel)]="text"
+  >
+  <button
+    class="btn"
+    (click)="onPost()"
+  >
+    Add text</button>
+</p>

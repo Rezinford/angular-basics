@@ -2,10 +2,10 @@
 <h1>Hello Angular World!</h1>
 
 <button (click)="toggle = !toggle">Toggle</button>
+<button (click)="toggle = 111">Set 111</button>
 
-
-<p *ngIf="toggle; else blueP "class = "red"> Lorem....</p>
-<ng-template #blueP>
-<p class = "blue"> Lorem....</p>
-</ng-template>
-
+<div [ngSwitch]="toggle">
+  <p *ngSwitchCase="true" class="red"> Ler....</p>
+  <p *ngSwitchCase="false" class="blue"> Ler...1.</p>
+  <p *ngSwitchDefault>AAAAAAAAAAAAAAAAAAa</p>
+</div>

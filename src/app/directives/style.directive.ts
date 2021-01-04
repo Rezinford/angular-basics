@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener, Input, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener, Input, Renderer2} from '@angular/core';
 import {ElementAnimationState} from '@angular/animations/browser/src/render/transition_animation_engine';
 
 @Directive({
@@ -8,6 +8,7 @@ export class StyleDirective {
   @Input('appStyle') color: string = 'blue';
   // @Input() fontWeight = 'normal';
   @Input() dStyles: {border?: string, fontWeight?: string, borderRadius?: string};
+  @HostBinding('style.color') eColor = null;
 
   constructor(private el: ElementRef, private r: Renderer2) {
     // this.r.setStyle(this.el.nativeElement, 'color', 'blue');
@@ -18,16 +19,18 @@ export class StyleDirective {
     console.log(event);
   }
   @HostListener('mouseenter') onEnter() {
-    this.r.setStyle(this.el.nativeElement, 'color', this.color);
-    this.r.setStyle(this.el.nativeElement, 'fontWeight', this.dStyles.fontWeight);
-    this.r.setStyle(this.el.nativeElement, 'border', this.dStyles.border);
-    this.r.setStyle(this.el.nativeElement, 'borderRadius', this.dStyles.borderRadius);
+    this.eColor = this.color;
+    // this.r.setStyle(this.el.nativeElement, 'color', this.color);
+    // this.r.setStyle(this.el.nativeElement, 'fontWeight', this.dStyles.fontWeight);
+    // this.r.setStyle(this.el.nativeElement, 'border', this.dStyles.border);
+    // this.r.setStyle(this.el.nativeElement, 'borderRadius', this.dStyles.borderRadius);
   }
 
   @HostListener('mouseleave') onLeave() {
-    this.r.setStyle(this.el.nativeElement, 'color', null);
-    this.r.setStyle(this.el.nativeElement, 'fontWeight', null);
-    this.r.setStyle(this.el.nativeElement, 'border', null);
-    this.r.setStyle(this.el.nativeElement, 'borderRadius', null);
+    this.eColor = null;
+    // this.r.setStyle(this.el.nativeElement, 'color', null);
+    // this.r.setStyle(this.el.nativeElement, 'fontWeight', null);
+    // this.r.setStyle(this.el.nativeElement, 'border', null);
+    // this.r.setStyle(this.el.nativeElement, 'borderRadius', null);
   }
 }

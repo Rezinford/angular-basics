@@ -3,11 +3,13 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
+import {MultiByPipe} from './pipes/multi-by.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MultiByPipe
   ],
   imports: [
     BrowserModule,

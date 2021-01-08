@@ -20,6 +20,12 @@ export class AppComponent {
   search: '';
   searchField = 'title';
 
+  addPost() {
+    this.posts.unshift({
+      title: 'TT',
+      text: 'fsdfsdf'
+    });
+  }
 }
 
 

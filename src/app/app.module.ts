@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
-import {AppCounterServesis} from './servesis/app-counter.servesis';
 
 
 @NgModule({
@@ -14,9 +13,7 @@ import {AppCounterServesis} from './servesis/app-counter.servesis';
     BrowserModule,
     FormsModule
   ],
-  providers: [
-    AppCounterServesis
-  ],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

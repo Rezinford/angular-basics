@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AppCounterServesis} from './servesis/app-counter.servesis';
+import {AppCounterService} from './servesis/app-counter.service';
 import {LocalCounterService} from './servesis/local-counter.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {LocalCounterService} from './servesis/local-counter.service';
 })
 export class AppComponent {
 
-  constructor(private appCounterService: AppCounterServesis,
+  constructor(private appCounterService: AppCounterService,
               private localCounterService: LocalCounterService) {
 
   }
